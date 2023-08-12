@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Events{% endblock %}
+
+{% block body %}
+    <h1>Edit Events</h1>
+       {{ form_start(form) }}
+ <div class="row justify-content-center mt-3">
+            <div class="col-md-6">
+                {{ form_start(form) }}
+                {{ form_row(form.name) }}
+                {{ form_row(form.date_time) }}
+                {{ form_row(form.description) }}
+                {{ form_row(form.pictureUrl) }}
+                {{ form_row(form.capacity) }}
+                {{ form_row(form.email) }}
+                </div>
+                  <div class="col-md-6">
+                {{ form_row(form.phone_number) }}
+                {{ form_row(form.street_name) }}
+                {{ form_row(form.zip) }}
+                {{ form_row(form.city_name) }}
+                {{ form_row(form.url) }}
+                {{ form_row(form.type) }}
+
+            </div>
+        </div>
+<div class="row">
+    <div class="col-md-4 custom-margin">
+        {{ include('events/_form.html.twig', {'button_label': 'Update'}) }}
+    </div>
+    <div class="col-md-4 custom-margin">
+        <a class="btn btn-primary btn-sm" href="{{ path('app_events_index') }}">Back to List</a>
+    </div>
+    <div class="col-md-4 custom-margin">
+        {{ include('events/_delete_form.html.twig') }}
+    </div>
+</div>
+     {{ form_end(form) }}
+{% endblock %}

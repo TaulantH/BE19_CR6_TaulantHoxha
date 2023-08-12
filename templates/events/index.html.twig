@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Events index{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+
+    </style>
+{% endblock %}
+
+{% block body %}
+<section>  <<div class="d-flex justify-content-center align-items-center flex-column" style="height: 500px;">
+        <div class="text-center mt-3">
+            <a href="{{ path('app_events_new') }}" class="btn btn-primary">Create new</a>
+        </div>
+    </div></section>
+    <div class="container">
+        <h1 class="text-center mt-4">Events index</h1>
+
+        <div class="row justify-content-center align-items-center mt-3">
+            {% for event in events %}
+                <div class="col-md-4 mb-4">
+                    <div class="card custom-card">
+                        <a href="{{ path('app_events_show', {'id': event.id}) }}"><img src="{{ asset('pictures/' ~ event.pictureUrl) }}" class="card-img-top" width="200px" height="300px" alt="Event Image"></a>
+                        <div class="card-body">
+                            <h5 class="card-title font-weight-bold">Name: {{ event.name }}</h5>
+                            <p class="card-text">Date: {{ event.dateTime ? event.dateTime|date('Y-m-d H:i:s') : '' }}</p>
+                            <p class="card-text">Description: {{ event.description }}</p>
+                        </div>
+                        <div class="card-footer text-center">
+                            <a class="btn btn-info btn-sm" data-mdb-toggle="collapse" href="{{ path('app_events_show', {'id': event.id}) }}"
+                                role="button" aria-expanded="false" aria-controls="collapseContent">Read more</a>
+
+                            <a type="button" class="btn btn-warning btn-sm" data-mdb-toggle="collapse" href="{{ path('app_events_edit', {'id': event.id}) }}"
+                                role="button" aria-expanded="false" aria-controls="collapseContent">Edit</a>
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+                <div class="col text-center">
+                    <p>No records found.</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,42 @@
+section {
+    background-image: url(../pictures/bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 500px;
+}
+
+
+.card.custom-card img:hover {
+    filter: brightness(1.2); /* Adjust the value to control the brightness */
+}
+/* public/css/style.css */
+
+/* Style for the full-screen picture */
+/* public/css/style.css */
+
+/* Style for the background image container */
+.background-image {
+    position: relative;
+    height: 100vh; /* Set the height of the container to fill the viewport */
+    background-size: cover; /* Scale the image to cover the container */
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
+    background-position: center center; /* Center the image horizontally and vertically */
+    color: white; /* Set text color for better visibility */
+    text-align: center; /* Center content vertically and horizontally */
+    padding: 50px;
+}
+
+/* Style for the table (if needed) */
+.table {
+    margin-top: 20px;
+}
+
+/* Style for buttons (if needed) */
+.btn {
+    margin: 10px;
+}
+
+    .custom-margin {
+        margin: 10px;
+    }
